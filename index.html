@@ -60,6 +60,20 @@
             font-size: 1.5rem;
             color: #3D2C41;
         }
+        .blog-post {
+            background-color: #E7D2CB;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+        .blog-post h2 {
+            color: #3D2C41;
+            font-size: 2rem;
+        }
+        .blog-post p {
+            font-size: 1.1rem;
+            color: #3D2C41;
+        }
         .footer {
             background-color: #3D2C41;
             color: #E7D2CB;
@@ -96,10 +110,14 @@
     <header class="header">
         <h1>Pinnacle Analytics</h1>
         <p>Actuarial Intelligence for a Changing World</p>
+        <nav>
+            <a href="#home" style="color: #D4AF37; text-decoration: none; margin-right: 20px;">Home</a>
+            <a href="#blog" style="color: #D4AF37; text-decoration: none;">Blog</a>
+        </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="section">
+    <!-- Home Section -->
+    <section id="home" class="section">
         <h1>Our Core Services</h1>
         <p>At Pinnacle Analytics, we bring actuarial mastery and data-driven insight together to help global organizations navigate risk, achieve stability, and grow with confidence.</p>
         <div class="services">
@@ -119,91 +137,45 @@
         <a href="#services-section" class="cta-button">View All Services</a>
     </section>
 
-    <!-- Detailed Services Section -->
-    <section id="services-section" class="section">
-        <h1>Our Detailed Services</h1>
+    <!-- Blog Section -->
+    <section id="blog" class="section">
+        <h1>Our Blog</h1>
+        <p>Stay tuned for our insights, updates, and industry news!</p>
 
-        <div class="service-card">
-            <h3>1. Insurance Consulting</h3>
-            <p>We deliver pricing, reserving, and product strategy for Life, Health, and General Insurance firms. We ensure sustainable profitability and compliance with global actuarial standards.</p>
+        <!-- Example Blog Post -->
+        <div class="blog-post">
+            <h2>Welcome to Pinnacle Analytics: Our First Post</h2>
+            <p>We are excited to launch Pinnacle Analytics and share our journey into the world of actuarial science, data analytics, and risk management...</p>
+            <a href="#first-post" class="cta-button">Read More</a>
         </div>
 
-        <div class="service-card">
-            <h3>2. Risk Management & Capital Modeling</h3>
-            <p>From enterprise risk frameworks to stress testing, we design strategies that strengthen financial resilience and ensure capital adequacy under any market condition.</p>
+        <!-- Additional Blog Posts -->
+        <div class="blog-post">
+            <h2>Exploring Insurance Risk Models</h2>
+            <p>Understanding insurance risk models is essential for creating accurate pricing and evaluating profitability...</p>
+            <a href="#second-post" class="cta-button">Read More</a>
         </div>
-
-        <div class="service-card">
-            <h3>3. Pension & Employee Benefits</h3>
-            <p>We provide actuarial valuations, scheme design, and funding strategies that balance employee security with employer sustainability.</p>
-        </div>
-
-        <div class="service-card">
-            <h3>4. Data Analytics & Predictive Modeling</h3>
-            <p>Our advanced analytics and machine learning models reveal trends, predict outcomes, and power smarter business decisions.</p>
-        </div>
-
-        <div class="service-card">
-            <h3>5. Reinsurance & Pricing Solutions</h3>
-            <p>We design optimal reinsurance structures, evaluate treaties, and enhance capital efficiency through precise actuarial analysis.</p>
-        </div>
-
-        <div class="service-card">
-            <h3>6. Financial Modelling & Forecasting</h3>
-            <p>We build dynamic models to forecast performance, assess risk, and guide strategic investment decisions.</p>
-        </div>
-
-        <div class="service-card">
-            <h3>7. Regulatory Compliance & Reporting</h3>
-            <p>Our actuarial reports and audit support ensure full compliance with IFRS 17, Solvency II, and local regulatory frameworks.</p>
-        </div>
-
-        <div class="service-card">
-            <h3>8. Health & Medical Analytics</h3>
-            <p>We analyze medical claims, cost drivers, and health outcomes to help clients control costs and improve benefit structures.</p>
-        </div>
-
-        <div class="service-card">
-            <h3>9. Product Development & Innovation</h3>
-            <p>We partner with insurers and fintechs to create innovative, compliant, and profitable products tailored to emerging markets.</p>
-        </div>
-
-        <div class="service-card">
-            <h3>10. Training & Capacity Building</h3>
-            <p>Our specialized actuarial and analytics training programs strengthen teams and equip professionals for global excellence.</p>
-        </div>
-
-        <a href="#contact-section" class="cta-button">Contact Us</a>
     </section>
 
-    <!-- Actuarial Calculator Section -->
-    <section id="calculator-section" class="calculator-container">
-        <h2>Insurance Premium Estimator</h2>
-        <form id="premiumForm">
-            <label for="age">Age:</label>
-            <input type="number" id="age" required>
-            <br><br>
-            <label for="sumAssured">Sum Assured ($):</label>
-            <input type="number" id="sumAssured" required>
-            <br><br>
-            <label for="riskClass">Risk Class:</label>
-            <select id="riskClass" required>
-                <option value="low">Low</option>
-                <option value="medium">Medium</option>
-                <option value="high">High</option>
-            </select>
-            <br><br>
-            <button type="submit" class="cta-button">Calculate Premium</button>
-        </form>
-        <p id="premiumResult"></p>
+    <!-- Individual Blog Posts -->
+    <section id="first-post" class="section">
+        <h1>Welcome to Pinnacle Analytics: Our First Post</h1>
+        <div class="blog-content">
+            <p>At Pinnacle Analytics, we are excited to bring our actuarial science expertise to the world...</p>
+            <p>In this first blog post, we want to introduce our mission, vision, and the services we offer...</p>
+            <p>Stay tuned for more insights from our team!</p>
+        </div>
+        <a href="#blog" class="cta-button">Back to Blog</a>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact-section" class="section">
-        <h1>Contact Us</h1>
-        <p>For consultations and inquiries, reach us via email:</p>
-        <p><strong>eunicemueni1009@gmail.com</strong></p>
-        <p>Payments accepted via Wise or Bank Transfer.</p>
+    <section id="second-post" class="section">
+        <h1>Exploring Insurance Risk Models</h1>
+        <div class="blog-content">
+            <p>Understanding the intricate models behind insurance pricing and risk evaluation...</p>
+            <p>This post will dive deep into some of the most important models used in risk management...</p>
+            <p>Stay tuned for more updates!</p>
+        </div>
+        <a href="#blog" class="cta-button">Back to Blog</a>
     </section>
 
     <!-- Footer Section -->
@@ -212,24 +184,7 @@
     </footer>
 
     <script>
-        document.getElementById('premiumForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            var age = document.getElementById('age').value;
-            var sumAssured = document.getElementById('sumAssured').value;
-            var riskClass = document.getElementById('riskClass').value;
-            var premium = calculatePremium(age, sumAssured, riskClass);
-            document.getElementById('premiumResult').innerText = 'Estimated Premium: $' + premium;
-        });
-
-        function calculatePremium(age, sumAssured, riskClass) {
-            var basePremium = sumAssured * 0.02; // 2% of sum assured
-            if (riskClass === 'medium') {
-                basePremium *= 1.2;
-            } else if (riskClass === 'high') {
-                basePremium *= 1.5;
-            }
-            return basePremium + (age * 0.05); // Adjust by age
-        }
+        // Example script for handling navigation or dynamic actions (if any)
     </script>
 </body>
 </html>
