@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pinnacle Analytics</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+  :root {
+    --gold: #D4AF37;
+    --plum: #3D2C41;
+    --blush: #E7D2CB;
+    --teal: #40E0D0;
+    --font-sans: 'Roboto', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+  }
+
+  * { box-sizing:border-box; margin:0; padding:0; scroll-behavior:smooth; }
+  body { font-family:var(--font-sans); color:var(--plum); background:#fff; line-height:1.6; }
+  a { text-decoration:none; color:inherit; }
+
+  header { background:var(--plum); color:#fff; padding:20px 0; position:sticky; top:0; z-index:1000; transition:0.3s; }
+  nav { display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:auto; padding:0 20px; }
+  .logo { font-family:var(--font-serif); font-size:28px; color:var(--gold); font-weight:bold; }
+  nav ul { display:flex; list-style:none; gap:25px; transition:0.3s; }
+  nav ul li a { color:#fff; font-weight:500; transition:0.3s; }
+  nav ul li a:hover { color:var(--gold); }
+
+  .hero {
+    background: linear-gradient(rgba(61,44,65,0.85), rgba(61,44,65,0.85)), url('https://images.unsplash.com/photo-1581092795366-3c2b43d44f28?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+    color:#fff; height:90vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:0 20px;
+    animation: fadeIn 2s ease-in-out;
+  }
+  .hero h1 { font-size:52px; margin-bottom:20px; animation: float 6s ease-in-out infinite; }
+  .hero p { font-size:22px; margin-bottom:30px; }
+  .btn { padding:15px 35px; background-color:var(--gold); color:var(--plum); font-weight:bold; border:none; cursor:pointer; transition:0.3s; font-size:18px; border-radius:10px; }
+  .btn:hover { background-color:#c19c2f; }
+
+  section { max-width:1200px; margin:auto; padding:80px 20px; }
+  h2 { text-align:center; font-size:38px; margin-bottom:50px; color:var(--plum); position:relative; }
+
+  .about { display:flex; flex-wrap:wrap; gap:40px; align-items:center; }
+  .about img { width:100%; max-width:500px; border-radius:12px; box-shadow:0 10px 25px rgba(0,0,0,0.15); }
+  .about .text { flex:1; min-width:280px; animation: slideInLeft 1.5s ease forwards; opacity:0; }
+  .about .text.visible { opacity:1; }
+
+  .services, .features, .dashboard { display:flex; flex-wrap:wrap; gap:30px; justify-content:center; }
+  .service-card, .feature-card, .dash-card {
+    border-radius:12px; padding:30px; flex:1 1 250px; max-width:300px; text-align:center; transition:transform 0.5s, box-shadow 0.5s; opacity:0;
+  }
+
+  .service-card { background-color:var(--blush); color:var(--plum); }
+  .service-card:hover { transform:translateY(-10px); box-shadow:0 12px 28px rgba(0,0,0,0.25); }
+
+  .feature-card { background:linear-gradient(145deg,var(--gold),var(--teal)); color:#fff; }
+  .feature-card:hover { transform:translateY(-10px); box-shadow:0 12px 28px rgba(0,0,0,0.25); }
+
+  .dash-card { background-color:var(--blush); color:var(--plum); }
+  .dash-card:hover { transform:translateY(-8px); box-shadow:0 10px 25px rgba(0,0,0,0.2); }
+
+  .service-card h3, .feature-card h3, .dash-card h4 { margin-bottom:15px; font-size:22px; }
+  .service-card p, .feature-card p, .dash-card p { font-size:16px; }
+
+  footer { background-color:var(--plum); color:#fff; padding:50px 20px; text-align:center; }
+  footer a { color:var(--gold); font-weight:bold; }
+
+  @keyframes float { 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-15px); } }
+  @keyframes fadeIn { 0%{opacity:0;} 100%{opacity:1;} }
+  @keyframes slideInLeft { 0%{transform:translateX(-50px); opacity:0;} 100%{transform:translateX(0); opacity:1;} }
+
+  @media (max-width:768px){
+    .about { flex-direction:column; }
+    nav ul { flex-direction:column; gap:10px; margin-top:15px; }
+    .services, .features, .dashboard { flex-direction:column; align-items:center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <nav>
+    <div class="logo">Pinnacle Analytics</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#dashboard">Dashboard</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div>
+    <h1>Precision, Insight, Excellence</h1>
+    <p>Advanced actuarial & data analytics solutions with Python-powered intelligence</p>
+    <button class="btn">Get Started</button>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="text">
+    <h2>About Pinnacle Analytics</h2>
+    <p>We provide cutting-edge actuarial solutions with Python-driven data analysis, predictive modeling, and risk forecasting. Our mission is to empower businesses and individuals with clarity and actionable insights.</p>
+    <p>From financial modeling to custom analytics dashboards, we transform complex data into simple, heavenly decisions.</p>
+  </div>
+  <img src="https://images.unsplash.com/photo-1581093458798-4c36f15cda01?auto=format&fit=crop&w=800&q=80" alt="About Pinnacle Analytics">
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <h2>Our Heavenly Services</h2>
+  <div class="services">
+    <div class="service-card"> <h3>Risk Assessment & Management</h3> <p>Analyze and mitigate financial risks with precision.</p> </div>
+    <div class="service-card"> <h3>Pension & Retirement Planning</h3> <p>Design secure retirement strategies for individuals & corporates.</p> </div>
+    <div class="service-card"> <h3>Insurance Consulting</h3> <p>Actuarial insights for pricing, policies, and claims management.</p> </div>
+    <div class="service-card"> <h3>Financial Modeling</h3> <p>Python-powered models to forecast and optimize financial decisions.</p> </div>
+    <div class="service-card"> <h3>Data Analysis & Python Solutions</h3> <p>Convert raw data into actionable insights with Python analytics.</p> </div>
+    <div class="service-card"> <h3>Investment & Portfolio Analytics</h3> <p>Optimize portfolio performance with data-driven strategies.</p> </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <h2>Features That Set Us Apart</h2>
+  <div class="features">
+    <div class="feature-card"> <h3>Python Models</h3> <p>Advanced predictive modeling & simulations.</p> </div>
+    <div class="feature-card"> <h3>Interactive Dashboard</h3> <p>Beautiful frontend mockup for KPI visualization.</p> </div>
+    <div class="feature-card"> <h3>Cloud-Ready Insights</h3> <p>Access data anywhere, anytime for instant decisions.</p> </div>
+    <div class="feature-card"> <h3>Custom Reports</h3> <p>Tailored reports that simplify complex analytics.</p> </div>
+  </div>
+</section>
+
+<!-- DASHBOARD -->
+<section id="dashboard">
+  <h2>Dashboard Preview</h2>
+  <div class="dashboard">
+    <!-- Bar Chart for Client Data -->
+    <div class="dash-card">
+      <h4>Total Clients</h4>
+      <canvas id="clientChart"></canvas>
+    </div>
+    <!-- Line Chart for Active Projects -->
+    <div class="dash-card">
+      <h4>Active Projects</h4>
+      <canvas id="projectsChart"></canvas>
+    </div>
+    <!-- Doughnut Chart for Risk Reports -->
+    <div class="dash-card">
+      <h4>Risk Reports</h4>
+      <canvas id="riskChart"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<footer id="contact">
+  <h2>Contact Us</h2>
+  <p>Email: <a href="mailto:eunicemueni1009@gmail.com">eunicemueni1009@gmail.com</a></p>
+  <p>Phone: +254 700 000 000</p>
+  <p>&copy; 2025 Pinnacle Analytics. All rights reserved.</p>
+</footer>
+
+<script>
+  // Chart.js - Client Data (Bar Chart)
+  const ctxClient = document.getElementById('clientChart').getContext('2d');
+  new Chart(ctxClient, {
+    type: 'bar',
+    data: {
+      labels: ['January', 'February', 'March', 'April', 'May'],
+      datasets: [{
+        label: 'Clients',
+        data: [50, 65, 72, 60, 85],
+        backgroundColor: 'rgba(255, 206, 86, 0.5)',
+        borderColor: 'rgba(255, 206, 86, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: false }},
+      scales: { y: { beginAtZero: true }} 
+    }
+  });
+
+  // Chart.js - Active Projects (Line Chart)
+  const ctxProjects = document.getElementById('projectsChart').getContext('2d');
+  new Chart(ctxProjects, {
+    type: 'line',
+    data: {
+      labels: ['January', 'February', 'March', 'April', 'May'],
+      datasets: [{
+        label: 'Active Projects',
+        data: [5, 8, 9, 7, 6],
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: false }},
+      scales: { y: { beginAtZero: true }} 
+    }
+  });
+
+  // Chart.js - Risk Reports (Doughnut Chart)
+  const ctxRisk = document.getElementById('riskChart').getContext('2d');
+  new Chart(ctxRisk, {
+    type: 'doughnut',
+    data: {
+      labels: ['High', 'Medium', 'Low'],
+      datasets: [{
+        data: [40, 30, 30],
+        backgroundColor: ['rgba(255, 99, 132, 0.7)', 'rgba(54, 162, 235, 0.7)', 'rgba(75, 192, 192, 0.7)'],
+        borderColor: '#fff',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { position: 'top' }}
+    }
+  });
+</script>
+
+</body>
+</html>
