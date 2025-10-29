@@ -113,6 +113,29 @@
         .post-icon:hover {
             color: #E7D2CB;
         }
+        .post-form {
+            display: none;
+            background-color: #E7D2CB;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            color: #3D2C41;
+        }
+        .post-form input, .post-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: none;
+        }
+        .post-form button {
+            background-color: #D4AF37;
+            padding: 12px 24px;
+            color: #3D2C41;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -154,10 +177,21 @@
         <p>Stay tuned for our insights, updates, and industry news!</p>
 
         <!-- Blog Post Icons Section (Add icon for posting) -->
-        <div class="post-icon" onclick="postAction()">
+        <div class="post-icon" onclick="showPostForm()">
             <i class="fas fa-pencil-alt"></i> <!-- Pencil icon for creating a post -->
             <p>Want to write your own post? Click here!</p>
         </div>
+
+        <!-- New Post Form -->
+        <div class="post-form" id="postForm">
+            <h2>Create a New Post</h2>
+            <input type="text" id="postTitle" placeholder="Post Title" required>
+            <textarea id="postContent" rows="6" placeholder="Write your post here..." required></textarea>
+            <button onclick="submitPost()">Submit Post</button>
+        </div>
+
+        <!-- Example Blog Post -->
+        <div id="newPostContainer"></div>
 
         <!-- Example Blog Post -->
         <div class="blog-post">
@@ -201,9 +235,29 @@
     </footer>
 
     <script>
-        // Example function triggered by the pencil icon
-        function postAction() {
-            alert("You can now write a post! (Replace this with real post action)");
+        // Show the post writing form
+        function showPostForm() {
+            document.getElementById('postForm').style.display = 'block';
+        }
+
+        // Submit the new post
+        function submitPost() {
+            var title = document.getElementById('postTitle').value;
+            var content = document.getElementById('postContent').value;
+
+            if (title && content) {
+                var newPost = `<div class="blog-post">
+                    <h2>${title}</h2>
+                    <p>${content}</p>
+                    <a href="#${title}" class="cta-button">Read More</a>
+                </div>`;
+
+                document.getElementById('newPostContainer').innerHTML = newPost;
+                document.getElementById('postForm').reset();
+                document.getElementById('postForm').style.display = 'none'; // Hide form after post
+            } else {
+                alert('Please fill in both fields!');
+            }
         }
     </script>
 </body>
