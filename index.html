@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pinnacle Analytics - Actuarial Intelligence for a Changing World</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"> <!-- Font Awesome CDN -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -102,6 +103,22 @@
             border-radius: 20px;
             font-weight: bold;
         }
+        /* Add some styling for post icon */
+        .post-icon {
+            font-size: 24px;
+            margin-right: 10px;
+            color: #D4AF37;
+        }
+        .post-section {
+            margin: 40px auto;
+            text-align: left;
+            max-width: 800px;
+        }
+        .post-section h2 {
+            color: #D4AF37;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -141,6 +158,13 @@
     <section id="blog" class="section">
         <h1>Our Blog</h1>
         <p>Stay tuned for our insights, updates, and industry news!</p>
+
+        <!-- Add Post Icon Button -->
+        <div class="post-section">
+            <h2><i class="fas fa-pencil-alt post-icon"></i> Create New Post</h2>
+            <p>Click here to create your first blog post. We will share insights and updates on the latest trends in actuarial science, data analytics, and risk management.</p>
+            <a href="create-post.html" class="cta-button">Create Post</a>
+        </div>
 
         <!-- Example Blog Post -->
         <div class="blog-post">
@@ -183,8 +207,5 @@
         <p>&copy; 2025 Pinnacle Analytics. All rights reserved.</p>
     </footer>
 
-    <script>
-        // Example script for handling navigation or dynamic actions (if any)
-    </script>
 </body>
 </html>
