@@ -88,42 +88,6 @@
             border-radius: 20px;
             font-weight: bold;
         }
-
-        .blog-post {
-            background-color: #E7D2CB;
-            padding: 30px;
-            margin-top: 40px;
-            border-radius: 20px;
-            color: #3D2C41;
-        }
-
-        .blog-post h2 {
-            font-size: 2rem;
-        }
-
-        .blog-form {
-            text-align: center;
-            padding: 40px;
-            background-color: #E7D2CB;
-            border-radius: 20px;
-        }
-
-        .blog-form input, .blog-form textarea {
-            padding: 12px;
-            font-size: 1rem;
-            margin: 10px 0;
-            width: 100%;
-            border-radius: 10px;
-            border: none;
-        }
-
-        .blog-form button {
-            background-color: #D4AF37;
-            padding: 12px 24px;
-            color: #3D2C41;
-            font-weight: bold;
-            border-radius: 20px;
-        }
     </style>
 </head>
 <body>
@@ -155,37 +119,69 @@
         <a href="#services-section" class="cta-button">View All Services</a>
     </section>
 
-    <!-- Blog Section -->
+    <!-- Free Resources Section -->
     <section class="section">
-        <h1>Our Blog</h1>
-        <p>Stay tuned for our insights, updates, and industry news!</p>
-
-        <!-- Blog Form for Submission -->
-        <div class="blog-form">
-            <h2>Submit Your Blog Post</h2>
-            <form id="blogForm">
-                <label for="title">Title:</label>
-                <input type="text" id="title" required placeholder="Enter blog title">
-                <br><br>
-                <label for="content">Content:</label>
-                <textarea id="content" required placeholder="Write your blog content here" rows="10"></textarea>
-                <br><br>
-                <button type="submit">Submit Blog Post</button>
-            </form>
-        </div>
-
-        <!-- Example Blog Post -->
-        <div class="blog-post">
-            <h2>Welcome to Pinnacle Analytics: Our First Post</h2>
-            <p>We are excited to launch Pinnacle Analytics and share our journey into the world of actuarial science, data analytics, and risk management...</p>
-            <a href="first-post.html" class="cta-button">Read More</a>
-        </div>
+        <h1>Free Resources</h1>
+        <p>Download our free actuarial tools and resources to gain insights into risk management and financial forecasting.</p>
+        <a href="#calculator-section" class="cta-button">Try Our Premium Estimator</a>
+        <p>We also offer reports and whitepapers to help you understand the latest trends in actuarial science and data analytics.</p>
     </section>
 
     <!-- Detailed Services Section -->
     <section id="services-section" class="section">
         <h1>Our Detailed Services</h1>
-        <!-- Add your services here as before -->
+
+        <div class="service-card">
+            <h3>1. Insurance Consulting</h3>
+            <p>We deliver pricing, reserving, and product strategy for Life, Health, and General Insurance firms. We ensure sustainable profitability and compliance with global actuarial standards.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>2. Risk Management & Capital Modeling</h3>
+            <p>From enterprise risk frameworks to stress testing, we design strategies that strengthen financial resilience and ensure capital adequacy under any market condition.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>3. Pension & Employee Benefits</h3>
+            <p>We provide actuarial valuations, scheme design, and funding strategies that balance employee security with employer sustainability.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>4. Data Analytics & Predictive Modeling</h3>
+            <p>Our advanced analytics and machine learning models reveal trends, predict outcomes, and power smarter business decisions.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>5. Reinsurance & Pricing Solutions</h3>
+            <p>We design optimal reinsurance structures, evaluate treaties, and enhance capital efficiency through precise actuarial analysis.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>6. Financial Modelling & Forecasting</h3>
+            <p>We build dynamic models to forecast performance, assess risk, and guide strategic investment decisions.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>7. Regulatory Compliance & Reporting</h3>
+            <p>Our actuarial reports and audit support ensure full compliance with IFRS 17, Solvency II, and local regulatory frameworks.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>8. Health & Medical Analytics</h3>
+            <p>We analyze medical claims, cost drivers, and health outcomes to help clients control costs and improve benefit structures.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>9. Product Development & Innovation</h3>
+            <p>We partner with insurers and fintechs to create innovative, compliant, and profitable products tailored to emerging markets.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>10. Training & Capacity Building</h3>
+            <p>Our specialized actuarial and analytics training programs strengthen teams and equip professionals for global excellence.</p>
+        </div>
+
+        <a href="#contact-section" class="cta-button">Contact Us</a>
     </section>
 
     <!-- Actuarial Calculator Section -->
@@ -210,6 +206,13 @@
         <p id="premiumResult"></p>
     </section>
 
+    <!-- Free Consultation Section -->
+    <section class="section">
+        <h1>Free Initial Consultation</h1>
+        <p>Ready to take your business to the next level? Schedule a free consultation with our actuarial experts. Get personalized insights and strategies to optimize your risk management and financial planning.</p>
+        <a href="mailto:eunicemueni1009@gmail.com?subject=Free Consultation Request" class="cta-button">Schedule Your Consultation</a>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact-section" class="section">
         <h1>Contact Us</h1>
@@ -224,19 +227,6 @@
     </footer>
 
     <script>
-        // Handle Blog Submission (Form)
-        document.getElementById('blogForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            var title = document.getElementById('title').value;
-            var content = document.getElementById('content').value;
-
-            // For now, just log the data to the console (You'd typically send it to a backend)
-            console.log("Blog Title: " + title);
-            console.log("Blog Content: " + content);
-            alert('Blog submitted successfully!');
-        });
-
-        // Handle Premium Calculation
         document.getElementById('premiumForm').addEventListener('submit', function(e) {
             e.preventDefault();
             var age = document.getElementById('age').value;
@@ -247,13 +237,13 @@
         });
 
         function calculatePremium(age, sumAssured, riskClass) {
-            var basePremium = sumAssured * 0.02;
+            var basePremium = sumAssured * 0.02; // 2% of sum assured
             if (riskClass === 'medium') {
                 basePremium *= 1.2;
             } else if (riskClass === 'high') {
                 basePremium *= 1.5;
             }
-            return basePremium + (age * 0.05);
+            return basePremium + (age * 0.05); // Adjust by age
         }
     </script>
 </body>
