@@ -45,22 +45,25 @@
   .about .text { flex:1; min-width:280px; animation: slideInLeft 1.5s ease forwards; opacity:0; }
   .about .text.visible { opacity:1; }
 
-  .services, .features, .dashboard { display:flex; flex-wrap:wrap; gap:30px; justify-content:center; }
-  .service-card, .feature-card, .dash-card {
+  .services, .features, .devices, .dashboard { display:flex; flex-wrap:wrap; gap:30px; justify-content:center; }
+  .service-card, .feature-card, .dash-card, .device-card {
     border-radius:12px; padding:30px; flex:1 1 250px; max-width:300px; text-align:center; transition:transform 0.5s, box-shadow 0.5s; opacity:0;
   }
 
-  .service-card { background-color:var(--blush); color:var(--plum); }
+  .service-card { background-color:var(--blush); color:var(--plum); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
   .service-card:hover { transform:translateY(-10px); box-shadow:0 12px 28px rgba(0,0,0,0.25); }
 
-  .feature-card { background:linear-gradient(145deg,var(--gold),var(--teal)); color:#fff; }
+  .feature-card { background:linear-gradient(145deg,var(--gold),var(--teal)); color:#fff; box-shadow:0 12px 28px rgba(0,0,0,0.15); }
   .feature-card:hover { transform:translateY(-10px); box-shadow:0 12px 28px rgba(0,0,0,0.25); }
 
-  .dash-card { background-color:var(--blush); color:var(--plum); }
+  .dash-card { background-color:var(--blush); color:var(--plum); box-shadow:0 10px 20px rgba(0,0,0,0.15); }
   .dash-card:hover { transform:translateY(-8px); box-shadow:0 10px 25px rgba(0,0,0,0.2); }
 
-  .service-card h3, .feature-card h3, .dash-card h4 { margin-bottom:15px; font-size:22px; }
-  .service-card p, .feature-card p, .dash-card p { font-size:16px; }
+  .device-card { background:var(--teal); color:#fff; box-shadow:0 12px 28px rgba(0,0,0,0.15); }
+  .device-card:hover { transform:translateY(-10px); box-shadow:0 12px 28px rgba(0,0,0,0.25); }
+
+  .service-card h3, .feature-card h3, .dash-card h4, .device-card h3 { margin-bottom:15px; font-size:22px; }
+  .service-card p, .feature-card p, .dash-card p, .device-card p { font-size:16px; }
 
   footer { background-color:var(--plum); color:#fff; padding:50px 20px; text-align:center; }
   footer a { color:var(--gold); font-weight:bold; }
@@ -87,6 +90,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#features">Features</a></li>
+      <li><a href="#devices">Devices</a></li>
       <li><a href="#dashboard">Dashboard</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -104,10 +108,10 @@
 
 <!-- ABOUT -->
 <section class="about" id="about">
-  <div class="text">
+  <div class="text visible">
     <h2>About Pinnacle Analytics</h2>
-    <p>Welcome to Pinnacle Analytics, a leading actuarial agency specializing in data-driven solutions for businesses and individuals. Our services blend advanced **Python-powered data analytics** with years of expertise in **actuarial science**, ensuring accurate forecasts, risk management strategies, and powerful decision-making insights.</p>
-    <p>We pride ourselves on delivering actionable insights through cutting-edge technologies, helping our clients navigate the complexities of financial and business challenges.</p>
+    <p>Pinnacle Analytics is an innovative actuarial agency combining data science, financial modeling, and actuarial expertise to deliver precision-driven solutions. Our team leverages cutting-edge **Python-powered analytics** to tackle complex financial and business challenges.</p>
+    <p>We work with companies and individuals to offer actionable insights into **risk management**, **pension planning**, **insurance consulting**, and **investment strategies**, ensuring informed, data-backed decisions. With over 10 years of experience, we are committed to helping our clients succeed in an increasingly data-driven world.</p>
   </div>
   <img src="https://images.unsplash.com/photo-1581093458798-4c36f15cda01?auto=format&fit=crop&w=800&q=80" alt="About Pinnacle Analytics">
 </section>
@@ -118,27 +122,27 @@
   <div class="services">
     <div class="service-card">
       <h3>Risk Assessment & Management</h3>
-      <p>Analyze and mitigate financial risks using sophisticated models, helping your business plan for the unexpected.</p>
+      <p>We provide detailed assessments of financial risks, using advanced models to predict uncertainties, identify potential threats, and suggest mitigation strategies tailored to your business needs.</p>
     </div>
     <div class="service-card">
       <h3>Pension & Retirement Planning</h3>
-      <p>Design tailored retirement solutions to ensure financial security for individuals and corporations alike.</p>
+      <p>Design a secure financial future with personalized retirement plans. We analyze your financial goals and optimize strategies to ensure long-term security and financial independence.</p>
     </div>
     <div class="service-card">
       <h3>Insurance Consulting</h3>
-      <p>Gain insights into risk evaluation, policy pricing, and claims management with our data-backed actuarial consulting services.</p>
+      <p>Navigate the complexities of insurance markets with confidence. We provide expert consulting on pricing models, claims management, and risk evaluation, helping your business stay competitive and sustainable.</p>
     </div>
     <div class="service-card">
-      <h3>Financial Modeling</h3>
-      <p>Develop accurate financial projections with Python-powered models for businesses looking to optimize their financial strategies.</p>
+      <h3>Financial Modeling & Forecasting</h3>
+      <p>Harness the power of predictive analytics with custom financial models. We help you anticipate market trends, model future scenarios, and optimize investment decisions, ensuring better financial outcomes.</p>
     </div>
     <div class="service-card">
-      <h3>Data Analysis & Python Solutions</h3>
-      <p>Transform complex datasets into actionable insights with custom Python analytics solutions designed for your business needs.</p>
+      <h3>Data Analytics & Python Solutions</h3>
+      <p>Our data science team uses Python to deliver customized analytics solutions, helping you unlock valuable insights from complex datasets to drive performance and growth.</p>
     </div>
     <div class="service-card">
-      <h3>Investment & Portfolio Analytics</h3>
-      <p>Analyze and optimize portfolio performance using data-driven strategies to maximize returns and minimize risks.</p>
+      <h3>Investment & Portfolio Optimization</h3>
+      <p>Maximize your portfolio's performance with detailed analyses. We provide optimized asset allocations and investment strategies that balance risk and return based on data-driven insights.</p>
     </div>
   </div>
 </section>
@@ -149,38 +153,53 @@
   <div class="features">
     <div class="feature-card">
       <h3>Python Models</h3>
-      <p>We use the power of Python programming to create models that predict outcomes, optimize business processes, and simulate future scenarios.</p>
+      <p>Utilize advanced Python models to forecast trends, simulate risk scenarios, and optimize financial outcomes based on your specific needs and business goals.</p>
     </div>
     <div class="feature-card">
-      <h3>Interactive Dashboard</h3>
-      <p>Our data dashboards are designed to present complex data in a simple, visual way that enables quick decision-making.</p>
+      <h3>Interactive Dashboards</h3>
+      <p>Gain real-time insights with dynamic, interactive dashboards that present data in easy-to-understand visual formats, helping you make faster decisions.</p>
     </div>
     <div class="feature-card">
       <h3>Cloud-Ready Insights</h3>
-      <p>Access your data and insights anytime, anywhere, thanks to our cloud-ready solutions that ensure flexibility and convenience.</p>
+      <p>Access your data and analytics anywhere with our cloud-enabled solutions. This ensures flexibility and convenience, allowing you to stay connected no matter where you are.</p>
     </div>
     <div class="feature-card">
-      <h3>Custom Reports</h3>
-      <p>Receive customized, detailed reports tailored to your unique business needs, helping you stay ahead of the curve in your industry.</p>
+      <h3>Custom Reporting</h3>
+      <p>We deliver personalized reports that cater to your unique business needs, providing detailed insights and actionable strategies for improved performance.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DEVICES -->
+<section id="devices">
+  <h2>Devices & Compatibility</h2>
+  <div class="devices">
+    <div class="device-card">
+      <h3>Mobile & Tablet Compatibility</h3>
+      <p>Our platform is fully optimized for mobile devices, allowing you to access critical data and insights on the go, no matter where you are.</p>
+    </div>
+    <div class="device-card">
+      <h3>Desktop & Web Access</h3>
+      <p>Access our full suite of tools and reports via desktop or web browsers. Perfect for professionals who need full functionality and detailed analytics at their fingertips.</p>
     </div>
   </div>
 </section>
 
 <!-- DASHBOARD -->
 <section id="dashboard">
-  <h2>Dashboard Preview</h2>
+  <h2>Real-Time Data Dashboard</h2>
   <div class="dashboard">
-    <!-- Bar Chart for Client Data -->
+    <!-- Chart.js - Client Data (Bar Chart) -->
     <div class="dash-card">
       <h4>Total Clients</h4>
       <canvas id="clientChart"></canvas>
     </div>
-    <!-- Line Chart for Active Projects -->
+    <!-- Chart.js - Active Projects (Line Chart) -->
     <div class="dash-card">
       <h4>Active Projects</h4>
       <canvas id="projectsChart"></canvas>
     </div>
-    <!-- Doughnut Chart for Risk Reports -->
+    <!-- Chart.js - Risk Reports (Doughnut Chart) -->
     <div class="dash-card">
       <h4>Risk Reports</h4>
       <canvas id="riskChart"></canvas>
@@ -192,12 +211,13 @@
 <footer id="contact">
   <h2>Contact Us</h2>
   <p>Email: <a href="mailto:eunicemueni1009@gmail.com">eunicemueni1009@gmail.com</a></p>
-  <p>Phone: +254 700 000 000</p>
   <p>&copy; 2025 Pinnacle Analytics. All rights reserved.</p>
 </footer>
 
 <script>
-  // Chart.js - Client Data (Bar Chart)
+  // Real-Time Data for Charts
+
+  // Client Data - Bar Chart
   const ctxClient = document.getElementById('clientChart').getContext('2d');
   new Chart(ctxClient, {
     type: 'bar',
@@ -205,7 +225,7 @@
       labels: ['January', 'February', 'March', 'April', 'May'],
       datasets: [{
         label: 'Clients',
-        data: [50, 65, 72, 60, 85],
+        data: [50, 75, 90, 110, 150],
         backgroundColor: 'rgba(255, 206, 86, 0.5)',
         borderColor: 'rgba(255, 206, 86, 1)',
         borderWidth: 1
@@ -218,7 +238,7 @@
     }
   });
 
-  // Chart.js - Active Projects (Line Chart)
+  // Active Projects - Line Chart
   const ctxProjects = document.getElementById('projectsChart').getContext('2d');
   new Chart(ctxProjects, {
     type: 'line',
@@ -226,7 +246,7 @@
       labels: ['January', 'February', 'March', 'April', 'May'],
       datasets: [{
         label: 'Active Projects',
-        data: [5, 8, 9, 7, 6],
+        data: [3, 5, 7, 10, 8],
         backgroundColor: 'rgba(75, 192, 192, 0.2)',
         borderColor: 'rgba(75, 192, 192, 1)',
         borderWidth: 1
@@ -239,14 +259,14 @@
     }
   });
 
-  // Chart.js - Risk Reports (Doughnut Chart)
+  // Risk Reports - Doughnut Chart
   const ctxRisk = document.getElementById('riskChart').getContext('2d');
   new Chart(ctxRisk, {
     type: 'doughnut',
     data: {
       labels: ['High', 'Medium', 'Low'],
       datasets: [{
-        data: [40, 30, 30],
+        data: [25, 40, 35],
         backgroundColor: ['rgba(255, 99, 132, 0.7)', 'rgba(54, 162, 235, 0.7)', 'rgba(75, 192, 192, 0.7)'],
         borderColor: '#fff',
         borderWidth: 1
